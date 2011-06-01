@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SlashScroll</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <script type="text/javascript">
+    	$(document).ready(function(){
+    	   	$("body").flexiPagination({
+	    		url: "/employees/fetch_data",
+	   			currentPage: 0,
+	   			totalResults: 120,
+	   			perPage: 30,
+	   			container: "#mycontainer",
+	   			pagerVar : "page",
+	   			loaderImgPath: "images/loader.gif",
+	   			loaderText: 'Loading...', 
+	   			debug : 1
+	    	});
+    	});
+    </script>
+  <%= csrf_meta_tag %>
+</head>
+<body style="background:#90EE90;"> 
+<!-- <body style="background:#FFE4E1;"> -->
+<%= yield %>
+
+</body>
+</html>
